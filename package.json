@@ -5,8 +5,7 @@
     "main": "./index.ts",
     "module": "./index.ts",
     "scripts": {
-        "api:start": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm ./index.ts",
-        "start": "tsc -w",
+        "start": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm ./index.ts",
         "build": "tsc"
     },
     "homepage": "https://sidebar.hey1010.com",
