@@ -1,31 +1,39 @@
 {
-    "name": "@sophat/sidebar",
+    "name": "sample-ts-api",
     "version": "0.0.1",
-    "description": "@sophat/sidebar build for sidebar ui supported with tailwindcss",
-    "main": "./dist/index.js",
     "type": "module",
-    "module": "./dist/index.js",
+    "main": "./index.ts",
+    "module": "./index.ts",
     "scripts": {
-        "start": "tsc --watch",
+        "api:start": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm ./index.ts",
+        "start": "tsc -w",
         "build": "tsc"
     },
     "homepage": "https://sidebar.hey1010.com",
     "repository": {
-        "url": "https://github.com/pphatdev/sidebar"
+        "url": "git+https://github.com/pphatdev/sidebar.git"
     },
     "bugs": {
         "url": "https://github.com/pphatdev/sidebar/issues"
     },
-    "keywords": [
-        "sophat", "@sophat/sidebar", "sidebar", "ui", "tailwindcss"
-    ],
     "maintainers": [
-        {
-            "name": "pphatdev",
-            "url": "https://github.com/pphatdev",
-            "email": "info.sophat@gmail.com"
-        }
+        "pphatdev <info.sophat@gmail.com> (https://github.com/pphatdev)"
     ],
     "author": "pphatdev <info.sophat@gmail.com>",
-    "license": "MIT"
+    "license": "MIT",
+    "description": "![](https://sidebar.hey1010.com/assets/home.webp)",
+    "dependencies": {
+        "@types/express": "^4.17.21",
+        "@types/node": "^20.12.7",
+        "@types/pg-pool": "^2.0.6",
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "fs": "^0.0.1-security",
+        "ip": "^2.0.1",
+        "passport": "^0.7.0",
+        "ts-dotenv": "^0.9.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.5"
+    }
 }
