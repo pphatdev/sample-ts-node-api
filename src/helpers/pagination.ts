@@ -1,4 +1,4 @@
-import { Options } from "../../configs/types"
+import { Options } from "../../configs/types.js"
 
 export class Pagination
 {
