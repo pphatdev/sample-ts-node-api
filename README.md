@@ -1,5 +1,5 @@
 <div align="center">
-    <h1> Sample NodeJS REST API 🌈🌞 </h1>
+    <h1> Sample TS Node API 🌈🌞 </h1>
     <p>This Project Built form Sample project that using NodeJs [es6] with Postgres SQL</p>
 </div>
 
