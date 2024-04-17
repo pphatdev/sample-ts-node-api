@@ -12,14 +12,22 @@ export type Version = string | number;
 
 export type Env = string;
 
-export type Page = number | string;
+export type Page = number;
 
 export type Limit = number | string;
 
 export type Columns = Array<any>;
 
+export type Operator = string | "or" | "and" | null;
+
+export type Conditions = {
+    operator: Operator,
+    value: String | null
+}
+
 export type Search = {
     column: Columns;
+    operator: Operator;
     value: number | string | null;
     condition: string | "or" | "and";
     withWere: boolean | true;
@@ -36,4 +44,14 @@ export type DB = {
     database: DBName;
     user: DBUser;
     password: DBPassword;
+}
+
+export type Options = {
+    table: string,
+    selectColumns: Array<any>,
+    conditions: Conditions,
+    page: Page,
+    limit: Limit,
+    search: Search,
+    sort: Sort
 }

@@ -1,6 +1,9 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response } from 'express'
+import { UserController } from '../controllers/users.js'
 
-export const ROUTE = express();
+export const USERS = new UserController()
+export const ROUTE = express()
+
 
 /**
  * Get Users List
@@ -10,9 +13,10 @@ export const ROUTE = express();
  * GET    | /api/${VERSION}/users       |                       |
  *--------------------------------------------------------------|
 */
-ROUTE.get('/', (request: Request, response: Response) => {
-    response.send(request.query);
-});
+ROUTE.get("/", async (request: Request, response: Response) => {
+    const getUser = await USERS.get(request.query)
+    response.send(getUser)
+})
 
 
 /**
@@ -24,8 +28,8 @@ ROUTE.get('/', (request: Request, response: Response) => {
  *--------------------------------------------------------------|
 */
 ROUTE.get('/:id', (request: Request, response: Response) => {
-    response.send(request.query);
-});
+    response.send(request.query)
+})
 
 
 /**
@@ -37,8 +41,8 @@ ROUTE.get('/:id', (request: Request, response: Response) => {
  *--------------------------------------------------------------|
 */
 ROUTE.post('/', (request: Request, response: Response) => {
-    response.send(request.query);
-});
+    response.send(request.query)
+})
 
 
 /**
@@ -50,8 +54,8 @@ ROUTE.post('/', (request: Request, response: Response) => {
  *--------------------------------------------------------------|
 */
 ROUTE.put('/', (request: Request, response: Response) => {
-    response.send(request.query);
-});
+    response.send(request.query)
+})
 
 
 /**
@@ -63,7 +67,7 @@ ROUTE.put('/', (request: Request, response: Response) => {
  *----------------------------------------------------------------|
 */
 ROUTE.delete('/', (request: Request, response: Response) => {
-    response.send(request.query);
-});
+    response.send(request.query)
+})
 
-export default ROUTE;
+export default ROUTE

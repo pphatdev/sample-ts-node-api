@@ -10,18 +10,18 @@ export const NAME: DBName = process.env.DB_NAME || ""
 export const USER: DBUser = process.env.DB_USER || ""
 export const PWD: DBPassword = process.env.DB_PWD || ""
 export const ENV: Env = process.env.NODE_ENV || "development"
-
+export const PAGE: Page = Number(process.env.PAGE) || 1
+export const LIMIT: Limit = Number(process.env.LIMIT) || 20
 export const LOGIN_EXP: Date = new Date(new Date().getTime() + 2627999999.97164)
-
-export const PAGE: Page = process.env.PAGE || 1
-export const LIMIT: Limit = process.env.PAGE || 20
 
 export const SEARCH: Search = {
     column: [],
+    operator: "",
     value: null,
     condition: "or",
     withWere: true
 }
+
 export const SORT: Sort = {
     column: [],
     value: "asc"
