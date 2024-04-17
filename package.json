@@ -30,9 +30,14 @@
         "express": "^4.19.2",
         "fs": "^0.0.1-security",
         "ip": "^2.0.1",
+        "joi": "^17.12.3",
         "passport": "^0.7.0",
+        "pg": "^8.11.5",
         "ts-dotenv": "^0.9.1",
         "ts-node": "^10.9.2",
         "typescript": "^5.4.5"
+    },
+    "devDependencies": {
+        "@types/pg": "^8.11.5"
     }
 }

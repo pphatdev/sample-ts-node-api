@@ -1,19 +1,38 @@
+import { PAGE } from '../../configs/index.js';
+import { GetList } from '../../configs/types.js';
 import { UserModel } from '../models/users.js';
 
 export class UserController extends UserModel
 {
-    constructor() {
+    constructor()
+    {
         super()
     }
 
 
     /**
      * get list of users
-     * @param {Object} request
+     * @param {GetList} request
      * @returns
      */
-    get = async (request: object) => {
-        return this.getData(request)
+    get = async (request: any) =>
+    {
+        const {
+            limit,
+            page,
+            search,
+            sort
+        } = request;
+
+        const defaultList: GetList = {
+            page: page || PAGE,
+            limit: limit || "all",
+            search: search || null,
+            sort: sort || "asc"
+        };
+
+        const response = await this.getData(defaultList)
+        return response
     };
 
 
@@ -22,7 +41,8 @@ export class UserController extends UserModel
      * @param {Number|String} request.id
      * @returns
      */
-    detail = async (request: object) => {
+    detail = async (request: object) =>
+    {
         return request;
     }
 
@@ -32,7 +52,8 @@ export class UserController extends UserModel
      * @param {Object} request
      * @returns
      */
-    insert = async (request: object) => {
+    insert = async (request: object) =>
+    {
         return request;
     }
 
@@ -42,7 +63,8 @@ export class UserController extends UserModel
      * @param {Object} request
      * @returns
      */
-    update = async (request: object) => {
+    update = async (request: object) =>
+    {
         return request;
     }
 
@@ -52,7 +74,8 @@ export class UserController extends UserModel
      * @param {Number|String} request.id
      * @returns
      */
-    delete = async (request: object) => {
+    delete = async (request: object) =>
+    {
         return request;
     }
 }

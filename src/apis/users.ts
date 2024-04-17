@@ -13,10 +13,11 @@ export const ROUTE = express()
  * GET    | /api/${VERSION}/users       |                       |
  *--------------------------------------------------------------|
 */
-ROUTE.get("/", async (request: Request, response: Response) => {
-    const getUser = await USERS.get(request.query)
-    response.send(getUser)
-})
+ROUTE.get("/", async (request: Request, response: Response) =>
+{
+    const getUser = await USERS.get(request.query);
+    response.send(getUser);
+});
 
 
 /**
@@ -27,7 +28,8 @@ ROUTE.get("/", async (request: Request, response: Response) => {
  * GET    | /api/${VERSION}/users/:id   |                       |
  *--------------------------------------------------------------|
 */
-ROUTE.get('/:id', (request: Request, response: Response) => {
+ROUTE.get('/:id', (request: Request, response: Response) =>
+{
     response.send(request.query)
 })
 
@@ -40,7 +42,8 @@ ROUTE.get('/:id', (request: Request, response: Response) => {
  * POST     | /api/${VERSION}/users       |                     |
  *--------------------------------------------------------------|
 */
-ROUTE.post('/', (request: Request, response: Response) => {
+ROUTE.post('/', (request: Request, response: Response) =>
+{
     response.send(request.query)
 })
 
@@ -53,7 +56,8 @@ ROUTE.post('/', (request: Request, response: Response) => {
  * PUT      | /api/${VERSION}/users       |                     |
  *--------------------------------------------------------------|
 */
-ROUTE.put('/', (request: Request, response: Response) => {
+ROUTE.put('/', (request: Request, response: Response) =>
+{
     response.send(request.query)
 })
 
@@ -66,7 +70,8 @@ ROUTE.put('/', (request: Request, response: Response) => {
  * DELETE   | /api/${VERSION}/users/:id     |                     |
  *----------------------------------------------------------------|
 */
-ROUTE.delete('/', (request: Request, response: Response) => {
+ROUTE.delete('/', (request: Request, response: Response) =>
+{
     response.send(request.query)
 })
 

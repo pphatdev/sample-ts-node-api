@@ -1,8 +1,8 @@
 import pgsql from "pg"
-import { HOST, NAME, PORT, PWD, USER } from ".";
-const { Pool } = pgsql
+import { HOST, NAME, PORT, PWD, USER } from "./index.js";
+const { Client } = pgsql
 
-export const client = new Pool({
+export const client = new Client({
     host: HOST,
     port: PORT,
     database: NAME,

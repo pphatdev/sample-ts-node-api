@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 import { DB } from "./types";
-import { ENV, HOST, NAME, PORT, USER } from ".";
+import { ENV, HOST, NAME, PORT, USER } from "./index.js";
 
 config()
 

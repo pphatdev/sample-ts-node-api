@@ -109,9 +109,9 @@ export class Pagination
             }
             ${ issetSort
                 ? `order by ${ sorts } ${sort.value}`
-                : noValue } ${ limit ? `limit ${limit}` : noValue
+                : noValue } ${ typeof limit != "string" ? `limit ${limit}` : noValue
             }
-            ${ page
+            ${ (page && typeof limit != "string")
                 ? `offset ${(page - 1) * Number(limit)}`
                 : noValue
             }`

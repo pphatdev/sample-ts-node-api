@@ -12,6 +12,8 @@ export type Version = string | number;
 
 export type Env = string;
 
+export type Search = string | null;
+
 export type Page = number;
 
 export type Limit = number | string;
@@ -25,7 +27,7 @@ export type Conditions = {
     value: String | null
 }
 
-export type Search = {
+export type Searches = {
     column: Columns;
     operator: Operator;
     value: number | string | null;
@@ -52,6 +54,14 @@ export type Options = {
     conditions: Conditions,
     page: Page,
     limit: Limit,
-    search: Search,
+    search: Searches,
     sort: Sort
+}
+
+
+export type GetList = {
+    page: Page,
+    limit: number | string | null,
+    search: string | "" | null,
+    sort: string | "asc" | "desc" | null,
 }
