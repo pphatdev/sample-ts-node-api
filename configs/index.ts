@@ -4,7 +4,7 @@ import { Columns, DBHost, DBName, DBPassword, DBPort, DBUser, Env, Limit, Page, 
 config()
 
 export const VERSION: Version = process.env.VERSION || "v1"
-export const PORT: DBPort = Number(process.env.PORT || 5433)
+export const PORT: DBPort = Number(process.env.DB_PORT || 5432)
 export const HOST: DBHost = process.env.DB_HOST || ""
 export const NAME: DBName = process.env.DB_NAME || ""
 export const USER: DBUser = process.env.DB_USER || ""
