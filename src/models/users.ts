@@ -15,40 +15,38 @@ export class UserModel extends Response
      */
     getData = async (request: GetList) => {
 
-        const { page, limit, search, sort } = request
-        const count = await client.query(`SELECT count(id) from public.users`)
-        const total = count.rows[0].count || 0
-        const query = pagination.query(
-            {
-                table: 'public.users',
-                selectColumns: ["id", "name", "email", "created_at", "updated_at"],
-                conditions: {
-                    operator: 'WHERE',
-                    value: ''
-                },
-                page: page,
-                limit: limit,
-                search: {
-                    column: [ 'name' ],
-                    value: search,
-                    operator: "or",
-                    condition: "",
-                    withWere: true
-                },
-                sort: {
-                    column: [ "name"],
-                    value: sort
+        try {
+            const { page, limit, search, sort } = request
+            const count = await client.query(`SELECT count(id) from public.users`)
+            const total = count.rows[0].count || 0
+            const query = pagination.query(
+                {
+                    table: 'public.users',
+                    selectColumns: ["id", "name", "email", "created_at", "updated_at"],
+                    conditions: {
+                        operator: 'WHERE',
+                        value: ''
+                    },
+                    page: page,
+                    limit: limit,
+                    search: {
+                        column: [ 'name' ],
+                        value: search,
+                        operator: "or",
+                        condition: "",
+                        withWere: true
+                    },
+                    sort: {
+                        column: [ "name"],
+                        value: sort
+                    }
                 }
-            }
-        )
-
-        return client.query(query, [])
-        .then(res => {
-            return this.success(res.rows, total)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            )
+            const reponse = await client.query(query, [])
+            return this.success(reponse.rows, total)
+        } catch (error) {
+            console.log(error)
+        }
     };
 
 

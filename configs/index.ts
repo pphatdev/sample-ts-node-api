@@ -28,11 +28,3 @@ export const SORT: Sort = {
 }
 
 export const COLUMNS: Columns = []
-
-// export const SEARCH: Search = {
-//     column: [],
-//     operator: "",
-//     value: null,
-//     condition: "or",
-//     withWere: true
-// }
