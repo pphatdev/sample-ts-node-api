@@ -13,6 +13,17 @@ export class Response
         }
     }
 
+
+    dataDetail = (data?: object, ...options: any[]) => {
+        return {
+            status: 200,
+            success: true,
+            version: VERSION,
+            result: data,
+            ...options
+        }
+    }
+
     notFound = (data: object, ...options: any[]) => {
         return {
             status: 404,

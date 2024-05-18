@@ -28,9 +28,10 @@ ROUTE.get("/", async (request: Request, response: Response) =>
  * GET    | /api/${VERSION}/users/:id   |                       |
  *--------------------------------------------------------------|
 */
-ROUTE.get('/:id', (request: Request, response: Response) =>
+ROUTE.get('/:id', async (request: Request, response: Response) =>
 {
-    response.send(request.query)
+    const getUser = await USERS.detail(request.params.id);
+    response.send(getUser);
 })
 
 

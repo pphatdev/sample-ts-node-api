@@ -55,8 +55,9 @@ export class UserModel extends Response
      * @param {Number|String} request.id
      * @returns
      */
-    detailData = async (request: object) => {
-        return request;
+    detailData = async (id: string) => {
+        const response = await client.query(`SELECT * from public.users where id = $1`, [id])
+        return this.dataDetail(response.rows)
     }
 
 

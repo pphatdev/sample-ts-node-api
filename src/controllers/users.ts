@@ -41,9 +41,9 @@ export class UserController extends UserModel
      * @param {Number|String} request.id
      * @returns
      */
-    detail = async (request: object) =>
+    detail = async (id: string) =>
     {
-        return request;
+        return this.detailData(id);
     }
 
 
